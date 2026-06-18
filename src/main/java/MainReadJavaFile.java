@@ -15,12 +15,14 @@ public class MainReadJavaFile {
         try {
             FileReader fr = new FileReader(fl);
             BufferedReader br = new BufferedReader(fr);
-            String line = br.readLine();
-            System.out.println(line);
-
-            line = br.readLine();
-            System.out.println(line);
-
+            while (true) {
+                String line = br.readLine();
+                if (line == null)
+                    break;
+                System.out.println(line);
+               // line = br.readLine();
+               // System.out.println(line);
+            }
             br.close();
         } catch (IOException e) {
             System.out.println(e.getMessage());
